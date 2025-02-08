@@ -1,0 +1,50 @@
+The solution involves giving the desired `:hover` style a higher specificity to override the first `:hover` style. There are several ways to achieve this:
+
+**1. Increased Specificity:** Increase the specificity of the `.container .inner:hover` selector by using more specific classes, IDs, or attributes.
+
+```css
+.container {
+  width: 100px;
+}
+
+.container .inner {
+  width: 200px;
+}
+
+.container.inner {
+  width: 150px;
+}
+
+.container.inner:hover {
+  width: 250px;
+}
+
+.container .inner-hover:hover {
+  width: 300px; /* Increased Specificity */
+}
+```
+
+**2. Using `!important` (generally not recommended):** While using `!important` works, it decreases the maintainability of the code. It should only be used as a last resort.
+
+```css
+.container {
+  width: 100px;
+}
+
+.container .inner {
+  width: 200px;
+}
+
+.container.inner {
+  width: 150px;
+}
+
+.container.inner:hover {
+  width: 250px;
+}
+
+.container .inner:hover {
+  width: 300px !important; /* Using !important (Not recommended) */
+}
+```
+The first approach is generally preferable for maintaining well-structured, predictable CSS.
